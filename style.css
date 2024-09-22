@@ -22,6 +22,57 @@ body {
 :root {
     --primary-color: #fa573a;
     --black-color: #242424;
+    --padding-horizontal: 19%;
 }
 
+/* Elements */
+ul,
+ol {
+    list-style-type: none;
+}
+
+i {
+    color: var(--primary-color);
+}
+
+
 /* Header */
+.info-bar {
+    --bg-color: #21242e;
+    background-color: var(--bg-color);
+    color: white;
+    padding: 0.5% var(--padding-horizontal);
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--bg-color);
+    }
+}
+
+.nav-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5% var(--padding-horizontal);
+
+    .list {
+        display: flex;
+        justify-content: space-around;
+
+        .item {
+            margin-left: 1.6rem;
+            font-size: 1.3rem;
+            color: grey;
+        }
+    }
+
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+
+        .point {
+            color: var(--primary-color);
+        }
+    }
+}
