@@ -146,3 +146,81 @@ button {
         color: inherit;
     }
 }
+
+/* services */
+.services {
+    padding: 1% var(--padding-horizontal);
+
+    &>.title {
+        text-align: center;
+        font-size: 3rem;
+
+        & span {
+            color: var(--primary-color);
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+                background-color: var(--primary-color);
+                width: 11rem;
+                height: 0.2rem;
+                top: 4rem;
+                left: -3rem;
+            }
+
+            &::before {
+                font-size: 1.5rem;
+                content: '𝗫';
+                color: var(--primary-color);
+                position: absolute;
+                top: 3.05rem;
+                left: 2.2rem;
+            }
+        }
+    }
+
+
+    .list {
+        display: flex;
+        counter-reset: counterName;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-left: 1px solid grey;
+        padding: 2rem;
+        align-items: start;
+        counter-increment: counterName;
+
+
+        .title::before {
+            content: counter(counterName) '. ';
+        }
+
+        .title {
+            font-size: 1.8rem;
+        }
+
+        &>* {
+            padding: 0.5rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+
+    i {
+        border: 1px solid var(--primary-color);
+        padding: 0.5rem;
+        max-width: 3rem;
+        text-align: center;
+        margin-left: 0.5rem;
+        margin-bottom: 1%;
+    }
+}
