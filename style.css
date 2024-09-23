@@ -175,7 +175,7 @@ button {
                 color: var(--primary-color);
                 position: absolute;
                 top: 86%;
-                left: 21%;
+                left: 27%;
             }
         }
     }
@@ -228,6 +228,7 @@ button {
 /* about-us */
 .about-us {
     padding: 1% var(--padding-horizontal);
+    margin-bottom: 4%;
 
     &>.title {
         text-align: center;
@@ -291,7 +292,7 @@ button {
             width: 100%;
             height: 100%;
             position: absolute;
-            background-color: rgb(0,0,0,0);
+            background-color: rgb(0, 0, 0, 0);
             z-index: -1;
             outline: 0.3rem solid var(--primary-color);
             transform: rotate(0.03turn);
@@ -308,5 +309,39 @@ button {
         width: 100%;
         height: 100%;
     }
+}
 
+/* footer */
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 20;
+
+    .go-up {
+        align-self: end;
+        margin-right: 2%;
+        margin-bottom: 0.5%;
+        font-size: 3rem;
+    }
+
+    .list {
+        padding: 0.2% var(--padding-horizontal);
+        background-color: #20242e;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .item:not(:last-child)::after {
+        content: ' - ';
+    }
+
+    a {
+        margin-left: -0.5rem;
+        color: white;
+        text-decoration: none;
+    }
 }
