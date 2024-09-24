@@ -56,6 +56,7 @@ button {
         display: flex;
         justify-content: space-between;
         background-color: var(--bg-color);
+        align-items: center;
     }
 }
 
@@ -63,11 +64,17 @@ button {
     background-color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0.5% var(--padding-horizontal);
+
+    .sidebar {
+        display: none;
+    }
 
     .list {
         display: flex;
         justify-content: space-around;
+        align-items: center;
 
         .item {
             margin-left: 2rem;
@@ -93,7 +100,7 @@ button {
     background-color: var(--black-color);
     display: flex;
     flex-direction: column;
-    padding: 5% var(--padding-horizontal);
+    padding: clamp(8rem, 4.5%, 5%) var(--padding-horizontal);
     position: relative;
     z-index: 1;
 
@@ -131,7 +138,7 @@ button {
 
     .button {
         width: 15rem;
-        padding: 1% 0.5%;
+        padding: clamp(1.6rem, 1.4%, 2%) 0.5%;
         margin-left: 0.5rem;
     }
 
@@ -228,7 +235,7 @@ button {
 /* about-us */
 .about-us {
     padding: 1% var(--padding-horizontal);
-    margin-bottom: 4%;
+    margin-bottom: clamp(5rem, 3.7%, 4.5%);
 
     &>.title {
         text-align: center;
@@ -343,5 +350,90 @@ button {
         margin-left: -0.5rem;
         color: white;
         text-decoration: none;
+    }
+}
+
+/* Media queries */
+@media (width <=1250px) {
+    :root {
+        --padding-horizontal: 9%;
+    }
+}
+
+@media (width <=905px) {
+    :root {
+        --padding-horizontal: 1%;
+    }
+}
+
+@media (width <=765px) {
+    .services .list {
+        flex-direction: column;
+
+        .item {
+            border-left: none;
+            border-bottom: 1px solid grey;
+        }
+    }
+
+    .about-us .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+
+        .img-container {
+            margin-top: 3%;
+            width: 87%;
+        }
+    }
+}
+
+@media (width <=510px) {
+    .info-bar {
+        span {
+            display: none;
+        }
+
+        .list {
+            justify-content: space-around;
+        }
+    }
+
+    .nav-bar {
+
+        flex-direction: column;
+        padding: 2% 4%;
+
+        .sidebar {
+            display: block;
+            font-size: 1.6rem;
+        }
+
+        .collapse {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .item {
+                font-size: 1.6rem;
+                text-align: center;
+                width: 100%;
+                margin: 0;
+                padding: 1.5rem;
+            }
+
+            .item:not(:last-of-type) {
+                border-bottom: 1px solid grey;
+            }
+
+        }
     }
 }
