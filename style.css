@@ -37,6 +37,20 @@ i {
     color: var(--primary-color);
 }
 
+a {
+    color: white;
+    text-decoration: none;
+
+    .nav-bar & {
+        color: grey;
+    }
+
+    .nav-bar &:hover,
+    .footer &:hover {
+        color: var(--primary-color);
+    }
+}
+
 button {
     background-color: var(--primary-color);
     color: white;
@@ -77,11 +91,6 @@ button {
         justify-content: space-between;
         background-color: var(--bg-color);
         align-items: center;
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
     }
 }
 
@@ -383,12 +392,6 @@ button {
 
     a {
         margin-left: -0.5rem;
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-            color: var(--primary-color);
-        }
     }
 }
 
