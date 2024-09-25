@@ -43,14 +43,23 @@ button {
     border: none;
     font-weight: bold;
 
+    & span {
+        transition: transform 1s ease;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
     &:hover {
         outline: 3px solid var(--primary-color);
         background-color: transparent;
         color: var(--primary-color);
-    }
 
-    & span {
-        transition: all 1s;
+        & span {
+            display: inline-block;
+            transform: translateX(27%);
+            height: auto;
+            width: auto;
+        }
     }
 
 }
@@ -87,6 +96,7 @@ button {
     .options {
         display: none;
     }
+
     input {
         display: none;
     }
@@ -158,7 +168,7 @@ button {
 
     .button {
         width: 15rem;
-        padding: clamp(1.6rem, 1.4%, 2%) 0.5%;
+        padding: clamp(1.6rem, 1.4%, 1%) 0.5%;
         margin-left: 0.5rem;
     }
 
@@ -308,6 +318,11 @@ button {
             margin-top: 3%;
             width: 30%;
             padding: 3% 2%;
+            text-align: center;
+
+            & span {
+                margin-left: 1rem;
+            }
         }
     }
 
@@ -370,6 +385,10 @@ button {
         margin-left: -0.5rem;
         color: white;
         text-decoration: none;
+
+        &:hover {
+            color: var(--primary-color);
+        }
     }
 }
 
@@ -410,7 +429,7 @@ button {
     }
 }
 
-@media (width <=530px) {
+@media (width <=600px) {
     .info-bar {
         a span {
             display: none;
@@ -429,8 +448,13 @@ button {
         .options {
             display: block;
             font-size: 1.6rem;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
+        /* will expand the sidebar(menu) after cliking the icon */
         #sidebar-toggle:not(:checked)~.list {
             display: none;
         }
@@ -439,7 +463,6 @@ button {
             display: flex;
             flex-direction: column;
             width: 100%;
-            /* transition: all 0.5s; */
 
             .item {
                 font-size: 1.6rem;
