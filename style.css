@@ -412,7 +412,7 @@ button {
 
 @media (width <=530px) {
     .info-bar {
-        span {
+        a span {
             display: none;
         }
 
